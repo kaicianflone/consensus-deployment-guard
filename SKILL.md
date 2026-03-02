@@ -5,6 +5,22 @@ homepage: https://github.com/kaicianflone/consensus-deployment-guard
 source: https://github.com/kaicianflone/consensus-deployment-guard
 upstream:
   consensus-guard-core: https://github.com/kaicianflone/consensus-guard-core
+
+requires:
+  bins:
+    - node
+    - tsx
+  env:
+    - CONSENSUS_STATE_FILE
+    - CONSENSUS_STATE_ROOT
+install:
+  - id: npm
+    kind: node
+    package: consensus-deployment-guard
+    bins:
+      - node
+      - tsx
+    label: Install consensus-deployment-guard from npm
 ---
 
 # consensus-deployment-guard
