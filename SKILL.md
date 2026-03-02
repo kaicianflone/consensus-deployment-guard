@@ -1,6 +1,7 @@
 ---
 name: consensus-deployment-guard
 description: Pre-deployment governance for release and infrastructure rollout requests. Use when an agent or workflow proposes shipping code/config/infrastructure changes to staging or production and you need deterministic ALLOW/BLOCK/REQUIRE_REWRITE decisions with strict schema validation, idempotency, and board-native audit artifacts.
+version: 0.1.9
 homepage: https://github.com/kaicianflone/consensus-deployment-guard
 source: https://github.com/kaicianflone/consensus-deployment-guard
 upstream:
@@ -13,14 +14,21 @@ requires:
   env:
     - CONSENSUS_STATE_FILE
     - CONSENSUS_STATE_ROOT
-install:
-  - id: npm
-    kind: node
-    package: consensus-deployment-guard
-    bins:
-      - node
-      - tsx
-    label: Install consensus-deployment-guard from npm
+metadata:
+  openclaw:
+    requires:
+      bins:
+        - node
+        - tsx
+      env:
+        - CONSENSUS_STATE_FILE
+        - CONSENSUS_STATE_ROOT
+    install:
+      - kind: node
+        package: consensus-deployment-guard
+        bins:
+          - node
+          - tsx
 ---
 
 # consensus-deployment-guard
