@@ -70,3 +70,5 @@ npm test
 ```
 
 Coverage includes schema rejection, hard-block paths, rewrite paths, allow paths, idempotent retries, and external-agent aggregation behavior.
+
+See also: `SECURITY-ASSURANCE.md` for threat model, runtime boundaries, and deployment hardening guidance.
